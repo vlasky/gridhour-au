@@ -13,7 +13,9 @@ updates:
       actions-security:
         applies-to: security-updates
         patterns: ["*"]
-  - package-ecosystem: pip
+  # uv, not pip: these files come from `uv pip compile --universal`, and the pip ecosystem
+  # regenerates them without that, dropping the Python 3.11 and platform markers (see #2)
+  - package-ecosystem: uv
     directory: /requirements
     schedule:
       interval: weekly
