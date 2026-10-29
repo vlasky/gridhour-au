@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gridhour-au"
+dynamic = ["version"]
+description = "When Australian electricity is green and cheap: a 48 hour carbon and NEM spot price timeline for the terminal"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["carbon intensity", "nem", "aemo", "electricity", "australia", "spot price", "tui", "terminal", "tmux"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/vlasky/gridhour-au"
+Issues = "https://github.com/vlasky/gridhour-au/issues"
+Security = "https://github.com/vlasky/gridhour-au/security/policy"
+Changelog = "https://github.com/vlasky/gridhour-au/blob/main/CHANGELOG.md"
+
+[project.scripts]
+gridhour-au = "gridhour_au.cli:main"
+
+[tool.setuptools]
+packages = ["gridhour_au"]
+
+[tool.setuptools.dynamic]
+version = { attr = "gridhour_au.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+# pyflakes, pycodestyle, isort, bugbear, pyupgrade, bandit (security), blind except, print
+select = ["E", "F", "W", "I", "B", "UP", "S", "BLE"]
+ignore = [
+    "UP031",    # %-formatting is the house style
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "S103", "S108", "S310", "S606"]   # tests build hostile setups on purpose
+"tools/*" = ["E402"]
+
+[tool.coverage.run]
+source = ["gridhour_au"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 80

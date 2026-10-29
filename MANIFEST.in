@@ -1,0 +1,4 @@
+# The sdist carries what it takes to run the test suite (packagers do), not the screenshots or CI.
+graft tests
+include CHANGELOG.md SECURITY.md docs/json.md
+global-exclude *.py[cod] __pycache__

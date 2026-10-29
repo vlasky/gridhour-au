@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.png binary
+# fixtures stay visible in diffs: they decide what the tests assert
+tests/fixtures/*.json linguist-generated
+# real AEMO files, kept byte for byte (the emissions factor list has CRLF line endings)
+tests/fixtures/* -text

@@ -1,0 +1,4 @@
+# Only what building the sdist and wheel needs (build runs with --no-isolation, so the backend is here).
+#   uv pip compile --universal --python-version 3.11 --generate-hashes requirements/release.in -o requirements/release.txt
+build
+setuptools>=77

@@ -1,0 +1,35 @@
+name: Bug report
+description: Something looks wrong or crashes
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw and what you expected instead. A screenshot helps a lot for drawing bugs.
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      placeholder: gridhour-au --line
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: gridhour-au --version
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: OS, terminal and size
+      placeholder: Ubuntu 26.04, kitty, 120x40
+  - type: textarea
+    id: json
+    attributes:
+      label: Output of gridhour-au --json (optional)
+      description: Leave out the postcode if you would rather not share it.
+      render: json

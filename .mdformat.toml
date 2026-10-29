@@ -1,0 +1,5 @@
+# Markdown formatting (mdformat, also run by pre-commit): wrap prose at 98 columns, no table padding.
+wrap = 98
+
+[plugin.tables]
+compact_tables = true

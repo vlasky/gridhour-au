@@ -1,0 +1,8 @@
+# Tools for tests, lint and packaging checks. Compile with:
+#   uv pip compile --universal --python-version 3.11 --generate-hashes requirements/dev.in -o requirements/dev.txt
+build
+coverage
+pre-commit
+pytest
+ruff
+twine
