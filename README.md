@@ -1,5 +1,10 @@
 # gridhour-au
 
+[![PyPI](https://img.shields.io/pypi/v/gridhour-au)](https://pypi.org/project/gridhour-au/)
+[![Python](https://img.shields.io/pypi/pyversions/gridhour-au)](https://pypi.org/project/gridhour-au/)
+[![CI](https://github.com/vlasky/gridhour-au/actions/workflows/ci.yml/badge.svg)](https://github.com/vlasky/gridhour-au/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/vlasky/gridhour-au/actions/workflows/codeql.yml/badge.svg)](https://github.com/vlasky/gridhour-au/actions/workflows/codeql.yml)
+
 When is electricity in the Australian National Electricity Market (NEM) green and cheap?
 gridhour-au shows the next 48 hours of estimated carbon intensity and wholesale spot prices for
 your NEM region on one timeline in the terminal, then picks the best time to start the washing,
