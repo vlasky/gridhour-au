@@ -12,7 +12,7 @@ repos:
         exclude: ^tests/fixtures/
       - id: trailing-whitespace
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: f368fb366ff7f2f808dd324b83a6d32267799e19  # v0.17.2
+    rev: c0f278f1254ccc8fb09676bcdb8d847e7db493e5  # v0.17.4
     hooks:
       - id: ruff-check
   - repo: https://github.com/hukkin/mdformat
